@@ -2,7 +2,13 @@ package beans;
 
 import javafx.beans.property.SimpleStringProperty;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class EmailBean {
+
+
+    public static Map<String , Integer> formattedValues = new HashMap<>();
 
 
     private SimpleStringProperty subject;
@@ -72,6 +78,9 @@ public class EmailBean {
         else{
             returnValue = size / 1048576+ "MB";
         }
+
+        formattedValues.put(returnValue , size);
+
         return  returnValue;
     }
 }
