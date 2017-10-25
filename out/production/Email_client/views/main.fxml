@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121" fx:controller="controllers.Controller">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="564.0" prefWidth="570.0" />
+      <TreeView prefHeight="650.0" prefWidth="219.0" />
+
+      <TableView layoutX="219.0" prefHeight="255.0" prefWidth="612.0">
+         <columns>
+            <TableColumn id="subjectColumn" prefWidth="186.0" text="Subject" />
+            <TableColumn id="sendColumn" prefWidth="226.0" text="Sender" />
+            <TableColumn id="sizeColumn" prefWidth="199.0" text="Size" />
+         </columns>
+      </TableView>
+
+       
+      <WebView layoutX="219.0" layoutY="255.0" prefHeight="392.0" prefWidth="612.0" />
    </children>
-</GridPane>
+</AnchorPane>
