@@ -1,6 +1,8 @@
 package controllers;
 
 import beans.EmailBean;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -14,6 +16,7 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable{
 
 
+    @FXML
     public WebView webView;
 
     //columns
@@ -25,7 +28,18 @@ public class MainController implements Initializable{
     private TableColumn<EmailBean , String> sizeColumn;
 
     //layout table view
+    @FXML
     public TableView<EmailBean> emailTableView;
+
+
+
+    final ObservableList<EmailBean> list = FXCollections.observableArrayList(
+            new EmailBean("food" , "xxx@gmail.com" , "24kb"),
+            new EmailBean("money" , "xxx@hotmail.com" , "12mb"),
+            new EmailBean("deal" , "xxx@qq.com" , "34kb"),
+            new EmailBean("things" , "xxx@baby.cn" , "12mb")
+    );
+
 
 
 
@@ -39,6 +53,7 @@ public class MainController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         setCellValues();
         webView.getEngine().load("http:www.bing.com");
+        emailTableView.setItems(list);
     }
 
 
