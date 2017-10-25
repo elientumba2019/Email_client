@@ -34,10 +34,10 @@ public class MainController implements Initializable{
 
 
     final ObservableList<EmailBean> list = FXCollections.observableArrayList(
-            new EmailBean("food" , "xxx@gmail.com" , "24kb"),
-            new EmailBean("money" , "xxx@hotmail.com" , "12mb"),
-            new EmailBean("deal" , "xxx@qq.com" , "34kb"),
-            new EmailBean("things" , "xxx@baby.cn" , "12mb")
+            new EmailBean("food" , "xxx@gmail.com" , 24),
+            new EmailBean("money" , "xxx@hotmail.com" , 12),
+            new EmailBean("deal" , "xxx@qq.com" , 34),
+            new EmailBean("things" , "xxx@baby.cn" , 12)
     );
 
 
