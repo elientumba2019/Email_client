@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.web.WebView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,23 +14,22 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable{
 
 
+    public WebView webView;
 
     //columns
     @FXML
-    public TableColumn<EmailBean , String> subjectColumn;
+    private TableColumn<EmailBean , String> subjectColumn;
     @FXML
-    public TableColumn<EmailBean , String> sendColumn;
+    private TableColumn<EmailBean , String> sendColumn;
     @FXML
-    public TableColumn<EmailBean , String> sizeColumn;
+    private TableColumn<EmailBean , String> sizeColumn;
 
     //layout table view
     public TableView<EmailBean> emailTableView;
 
-    
 
 
 
-    
     /**
      * where averything will be set up before being used
      * @param location
@@ -38,7 +38,7 @@ public class MainController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setCellValues();
-
+        webView.getEngine().load("http:www.bing.com");
     }
 
 

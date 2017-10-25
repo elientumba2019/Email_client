@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.web.*?>
 <?import javafx.scene.control.*?>
@@ -7,7 +8,7 @@
 
 <AnchorPane fx:controller="controllers.MainController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TreeView layoutX="8.0" layoutY="8.0" prefHeight="635.0" prefWidth="211.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="3.0" />
+      <TreeView layoutX="18.0" layoutY="13.0" prefHeight="630.0" prefWidth="222.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="8.0" />
 
       <TableView fx:id="emailTableView" layoutX="241.0" layoutY="14.0" prefHeight="260.0" prefWidth="589.0" AnchorPane.leftAnchor="241.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0">
          <columns>
