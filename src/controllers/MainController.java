@@ -19,7 +19,6 @@ public class MainController implements Initializable{
     public TableColumn sendColumn;
     @FXML
     public TableColumn sizeColumn;
-
     //layout table view
     public TableView emailTableView;
 
@@ -35,6 +34,6 @@ public class MainController implements Initializable{
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       
+
     }
 }
