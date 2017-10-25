@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +21,7 @@ public class MainController implements Initializable{
     public TableColumn<EmailBean , String> sendColumn;
     @FXML
     public TableColumn<EmailBean , String> sizeColumn;
+
     //layout table view
     public TableView<EmailBean> emailTableView;
 
@@ -35,6 +37,19 @@ public class MainController implements Initializable{
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setCellValues();
 
+    }
+
+
+
+
+    /**
+     * sets cell values properties for the table
+     */
+    private void setCellValues() {
+        subjectColumn.setCellValueFactory(new PropertyValueFactory<EmailBean , String>("subject"));
+        sendColumn.setCellValueFactory(new PropertyValueFactory<EmailBean , String>("sender"));
+        sizeColumn.setCellValueFactory(new PropertyValueFactory<EmailBean , String>("size"));
     }
 }
