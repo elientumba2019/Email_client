@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.web.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane fx:controller="controllers.MainController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TreeView prefHeight="650.0" prefWidth="219.0" />
+      <TreeView layoutX="8.0" layoutY="8.0" prefHeight="635.0" prefWidth="211.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="3.0" />
 
-      <TableView layoutX="219.0" prefHeight="255.0" prefWidth="612.0">
+      <TableView fx:id="emailTableView" layoutX="241.0" layoutY="14.0" prefHeight="260.0" prefWidth="589.0" AnchorPane.leftAnchor="241.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0">
          <columns>
-            <TableColumn id="subjectColumn" prefWidth="186.0" text="Subject" />
-            <TableColumn id="sendColumn" prefWidth="226.0" text="Sender" />
-            <TableColumn id="sizeColumn" prefWidth="199.0" text="Size" />
+            <TableColumn fx:id="subjectColumn" prefWidth="186.0" text="Subject" />
+            <TableColumn fx:id="sendColumn" prefWidth="226.0" text="Sender" />
+            <TableColumn fx:id="sizeColumn" prefWidth="199.0" text="Size" />
          </columns>
       </TableView>
 
-
-      <WebView layoutX="219.0" layoutY="255.0" prefHeight="392.0" prefWidth="612.0" />
+       
+      <WebView fx:id="webView" layoutX="246.0" layoutY="287.0" prefHeight="320.0" prefWidth="569.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="282.0" />
    </children>
+
+    
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+    
 </AnchorPane>
