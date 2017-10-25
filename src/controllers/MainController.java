@@ -1,5 +1,6 @@
 package controllers;
 
+import beans.EmailBean;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -14,13 +15,13 @@ public class MainController implements Initializable{
 
     //columns
     @FXML
-    public TableColumn subjectColumn;
+    public TableColumn<EmailBean , String> subjectColumn;
     @FXML
-    public TableColumn sendColumn;
+    public TableColumn<EmailBean , String> sendColumn;
     @FXML
-    public TableColumn sizeColumn;
+    public TableColumn<EmailBean , String> sizeColumn;
     //layout table view
-    public TableView emailTableView;
+    public TableView<EmailBean> emailTableView;
 
     
 
