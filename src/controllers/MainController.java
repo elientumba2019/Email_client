@@ -7,7 +7,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.web.WebView;
 
 import java.net.URL;
@@ -17,8 +20,14 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable{
 
 
+    //web view
     @FXML
     public WebView webView;
+
+    //tree view
+    public TreeView<String> emailFoldersTreeView;
+    //tree item for the tree view element
+    private TreeItem<String> root = new TreeItem<>();
 
     //columns
     @FXML
@@ -55,8 +64,34 @@ public class MainController implements Initializable{
         setCellValues();
         webView.getEngine().load("http:www.bing.com");
         emailTableView.setItems(list);
+        initializeTree();
     }
 
+
+    /**
+     * initializes the tree
+     * by setting tree items
+     * to create a hierarchical structure
+     */
+    private void initializeTree() {
+        emailFoldersTreeView.setRoot(root);
+        root.setValue("xxx@yahoo.com");
+
+        TreeItem<String> inbox = new TreeItem<>("Inbox");
+
+        TreeItem<String> sent = new TreeItem<>("Sent");
+        TreeItem<String> s1 = new TreeItem<>("Subitem1");
+        TreeItem<String> s2 = new TreeItem<>("Subitem2");
+        sent.getChildren().addAll(s1 , s2);
+
+        TreeItem<String> spam = new TreeItem<>("Spam");
+
+        TreeItem<String> trash = new TreeItem<>("Trash");
+
+        root.getChildren().addAll(inbox , sent , spam , trash);
+        root.setExpanded(true);
+
+    }
 
 
 
