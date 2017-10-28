@@ -45,15 +45,6 @@ public class MainController implements Initializable{
 
 
 
-    final ObservableList<EmailBean> list = FXCollections.observableArrayList(
-            new EmailBean("food" , "xxx@gmail.com" , 24),
-            new EmailBean("money" , "xxx@hotmail.com" , 12),
-            new EmailBean("deal" , "xxx@qq.com" , 34),
-            new EmailBean("things" , "xxx@baby.cn" , 12)
-    );
-
-
-
 
 
     /**
@@ -64,8 +55,6 @@ public class MainController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setCellValues();
-        webView.getEngine().load("http:www.bing.com");
-        emailTableView.setItems(list);
         initializeTree();
     }
 
