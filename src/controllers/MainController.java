@@ -14,6 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.web.WebView;
+import sampleData.SampleData;
 
 import java.net.URL;
 import java.util.Comparator;
@@ -21,6 +22,9 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable{
 
+
+    //instance of the sample data class
+    private SampleData sampleData = new SampleData();
 
     //web view
     @FXML

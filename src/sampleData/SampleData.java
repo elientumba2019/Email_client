@@ -4,7 +4,12 @@ import beans.EmailBean;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class SampleData {
+
+
 
     private final ObservableList<EmailBean> Inbox = FXCollections.observableArrayList(
             new EmailBean("Hello from Sefu!!!","aaa@yahoo.com", 5500000, "<html>Hello from Sefu!!!<h3>lorem ipsum + <br> </h3></html>"),
@@ -33,4 +38,20 @@ public class SampleData {
             new EmailBean("You got a virus!","safe@brousing.com",6300, "<html>Formatting computer.....<h3>lorem ipsum + <br> </h3></html>")
     );
 
+
+
+    //map for email folders
+    //ways of accesing list based on their names
+    public Map<String , ObservableList<EmailBean>> emailFolder = new HashMap<>();
+
+
+
+    /**
+     * samples data class contructors
+     */
+    public SampleData(){
+        emailFolder.put("Inbox" , Inbox);
+        emailFolder.put("Sent" , Sent);
+        emailFolder.put("Spam" , Spam);
+    }
 }
