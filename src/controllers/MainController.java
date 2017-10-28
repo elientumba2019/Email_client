@@ -5,11 +5,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.web.WebView;
 
@@ -68,6 +70,8 @@ public class MainController implements Initializable{
     }
 
 
+
+
     /**
      * initializes the tree
      * by setting tree items
@@ -77,16 +81,15 @@ public class MainController implements Initializable{
         emailFoldersTreeView.setRoot(root);
         root.setValue("xxx@yahoo.com");
 
-        TreeItem<String> inbox = new TreeItem<>("Inbox");
+        TreeItem<String> inbox = new TreeItem<>("Inbox" , resolveIcon("Inbox"));
 
-        TreeItem<String> sent = new TreeItem<>("Sent");
-        TreeItem<String> s1 = new TreeItem<>("Subitem1");
-        TreeItem<String> s2 = new TreeItem<>("Subitem2");
+        TreeItem<String> sent = new TreeItem<>("Sent" , resolveIcon("Sent1"));
+        TreeItem<String> s1 = new TreeItem<>("Subitem1" , resolveIcon("Subitem"));
+        TreeItem<String> s2 = new TreeItem<>("Subitem2" , resolveIcon("Subitem"));
         sent.getChildren().addAll(s1 , s2);
 
-        TreeItem<String> spam = new TreeItem<>("Spam");
-
-        TreeItem<String> trash = new TreeItem<>("Trash");
+        TreeItem<String> spam = new TreeItem<>("Spam" , resolveIcon("Spam"));
+        TreeItem<String> trash = new TreeItem<>("Trash" , resolveIcon("Spam"));
 
         root.getChildren().addAll(inbox , sent , spam , trash);
         root.setExpanded(true);
@@ -119,5 +122,63 @@ public class MainController implements Initializable{
                 return int1.compareTo(int2);
             }
         });
+    }
+
+
+
+
+    /**
+     * helper method to help in defining which
+     * image needs to be used in the tree for its
+     * elements
+     * @param itemTreeValue
+     * @return
+     */
+    private Node resolveIcon(String itemTreeValue){
+
+        String lower = itemTreeValue.toLowerCase();
+        ImageView returnIcon;
+
+
+        try{
+
+            if(lower.contains("inbox")){
+                returnIcon = getImage("../images/inbox.png");
+            }
+            else if(lower.contains("sent")){
+                returnIcon = getImage("../images/sent2.png");
+            }
+            else if(lower.contains("spam")){
+                returnIcon = getImage("../images/spam.png");
+            }
+            else if(lower.contains("@")){
+                returnIcon = getImage("../images/email.png");
+            }
+            else{
+                returnIcon = getImage("../images/folder.png");
+            }
+
+
+        }catch (NullPointerException e){
+            System.out.println("Wrong image location");
+            returnIcon = new ImageView();
+        }
+
+
+
+        return returnIcon;
+    }
+    
+
+
+
+    /**
+     * retrieves the image
+     * @param path
+     * @return
+     */
+    private ImageView getImage(String path){
+        Image image = new Image(getClass().getResourceAsStream(path));
+        return new ImageView(image);
     }
 }
