@@ -1,6 +1,8 @@
 package sampleData;
 
 import beans.EmailBean;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class SampleData {
 
