@@ -90,7 +90,30 @@ public class MainController implements Initializable{
         root.getChildren().addAll(inbox , sent , spam , trash);
         root.setExpanded(true);
 
+        //click event method
+        handleClick(emailFoldersTreeView);
+
     }
+
+
+    /**
+     * handles click event for folders on the email client
+     * @param emailFolder
+     */
+    private void handleClick(TreeView<String> emailFolder){
+
+        emailFolder.setOnMouseClicked(L -> {
+            //getting the selected item on the tree
+            TreeItem<String> item = emailFolder.getSelectionModel().getSelectedItem();
+            //if the selected item is not null , then load the corresponding folder
+            if(item != null){
+                emailTableView.setItems(sampleData.emailFolder.get(item.getValue()));
+            }
+        });
+    }
+
+
+
 
 
 
@@ -101,9 +124,6 @@ public class MainController implements Initializable{
         subjectColumn.setCellValueFactory(new PropertyValueFactory<EmailBean , String>("subject"));
         sendColumn.setCellValueFactory(new PropertyValueFactory<EmailBean , String>("sender"));
         sizeColumn.setCellValueFactory(new PropertyValueFactory<EmailBean , String>("size"));
-
-
-
 
         //comparator to sort the size
         sizeColumn.setComparator(new Comparator<String>() {
@@ -119,6 +139,9 @@ public class MainController implements Initializable{
             }
         });
     }
+
+
+
 
 
 
@@ -166,6 +189,8 @@ public class MainController implements Initializable{
         return returnIcon;
     }
     
+
+
 
 
 
