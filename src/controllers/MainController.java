@@ -5,10 +5,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -22,6 +19,11 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable{
 
+
+
+
+    //menu item
+    private MenuItem showDetails = new MenuItem("Show details");
 
     //instance of the sample data class
     private SampleData sampleData = new SampleData();
@@ -63,13 +65,14 @@ public class MainController implements Initializable{
         setCellValues();
         initializeTree();
         handleTableColumnsClick();
+        setContextMenu();
     }
 
 
 
 
     /**
-     * displays an email content
+     * displays an email content dynamically
      * whenever a columns in the email list
      * is clicked on
      */
@@ -79,6 +82,23 @@ public class MainController implements Initializable{
             if(bean != null){
                 webView.getEngine().loadContent(bean.getContent());
             }
+        });
+
+    }
+
+
+
+
+    /**
+     * adds a context menu to the table view
+     * context menu : menu that appears
+     * when we click right
+     */
+    private void setContextMenu(){
+        //adding the context menu
+        emailTableView.setContextMenu(new ContextMenu(showDetails));
+        showDetails.setOnAction(L -> {
+            System.out.println("Context menu clicked");
         });
     }
 
