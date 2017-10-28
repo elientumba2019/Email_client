@@ -78,11 +78,13 @@ public class MainController implements Initializable{
      * to create a hierarchical structure
      */
     private void initializeTree() {
+        //setting the root of the tree
         emailFoldersTreeView.setRoot(root);
         root.setValue("xxx@yahoo.com");
+        root.setGraphic(resolveIcon(root.getValue()));
 
+        //setting element po the tree elements
         TreeItem<String> inbox = new TreeItem<>("Inbox" , resolveIcon("Inbox"));
-
         TreeItem<String> sent = new TreeItem<>("Sent" , resolveIcon("Sent1"));
         TreeItem<String> s1 = new TreeItem<>("Subitem1" , resolveIcon("Subitem"));
         TreeItem<String> s2 = new TreeItem<>("Subitem2" , resolveIcon("Subitem"));
@@ -91,6 +93,7 @@ public class MainController implements Initializable{
         TreeItem<String> spam = new TreeItem<>("Spam" , resolveIcon("Spam"));
         TreeItem<String> trash = new TreeItem<>("Trash" , resolveIcon("Spam"));
 
+        //set the root element
         root.getChildren().addAll(inbox , sent , spam , trash);
         root.setExpanded(true);
 
