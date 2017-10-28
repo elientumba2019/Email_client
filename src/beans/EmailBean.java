@@ -14,6 +14,7 @@ public class EmailBean {
     private SimpleStringProperty subject;
     private SimpleStringProperty sender;
     private SimpleStringProperty size;
+    private String content;
 
 
     /**
@@ -22,10 +23,11 @@ public class EmailBean {
      * @param sender
      * @param size
      */
-    public EmailBean(String subject , String sender , int size){
+    public EmailBean(String subject , String sender , int size , String content){
         this.subject = new SimpleStringProperty(subject);
         this.sender = new SimpleStringProperty(sender);
         this.size = new SimpleStringProperty(formatSize(size));
+        this.content = content;
     }
 
 
@@ -82,5 +84,14 @@ public class EmailBean {
         formattedValues.put(returnValue , size);
 
         return  returnValue;
+    }
+
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }
