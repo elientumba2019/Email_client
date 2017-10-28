@@ -1,8 +1,7 @@
 package controllers;
 
 import beans.EmailBean;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -13,6 +12,7 @@ import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebView;
 import sampleData.SampleData;
 
@@ -51,6 +51,8 @@ public class MainController implements Initializable{
 
 
 
+
+
     /**
      * where averything will be set up before being used
      * @param location
@@ -60,7 +62,26 @@ public class MainController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         setCellValues();
         initializeTree();
+        handleTableColumnsClick();
     }
+
+
+
+
+    /**
+     * displays an email content
+     * whenever a columns in the email list
+     * is clicked on
+     */
+    private void handleTableColumnsClick(){
+        emailTableView.setOnMouseClicked(L -> {
+            EmailBean bean = emailTableView.getSelectionModel().getSelectedItem();
+            if(bean != null){
+                webView.getEngine().loadContent(bean.getContent());
+            }
+        });
+    }
+
 
 
 
@@ -94,6 +115,8 @@ public class MainController implements Initializable{
         handleClick(emailFoldersTreeView);
 
     }
+
+
 
 
     /**
@@ -138,6 +161,8 @@ public class MainController implements Initializable{
                 return int1.compareTo(int2);
             }
         });
+
+
     }
 
 
@@ -188,7 +213,7 @@ public class MainController implements Initializable{
 
         return returnIcon;
     }
-    
+
 
 
 
