@@ -5,13 +5,10 @@ import beans.Singleton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -152,13 +149,22 @@ public class MainController implements Initializable{
 
         //view factory instance
         ViewFactory factory = new ViewFactory();
+        setRoot(factory);
+        addTreeElement(factory);
+        //click event method
+        handleClick(emailFoldersTreeView);
 
-        //setting the root of the tree
-        emailFoldersTreeView.setRoot(root);
-        root.setValue("xxx@yahoo.com");
-        root.setGraphic(factory.resolveIcon(root.getValue()));
+    }
 
 
+
+
+    
+    /**
+     * adds a few element to the tree view
+     * @param factory
+     */
+    private void addTreeElement(ViewFactory factory) {
         //setting element po the tree elements
         TreeItem<String> inbox = new TreeItem<>("Inbox" , factory.resolveIcon("Inbox"));
         TreeItem<String> sent = new TreeItem<>("Sent" , factory.resolveIcon("Sent1"));
@@ -172,16 +178,26 @@ public class MainController implements Initializable{
         //set the root element
         root.getChildren().addAll(inbox , sent , spam , trash);
         root.setExpanded(true);
-
-        //click event method
-        handleClick(emailFoldersTreeView);
-
     }
 
 
 
 
-    
+    /**
+     * sets the roots element
+     * of the tree view
+     * @param factory
+     */
+    private void setRoot(ViewFactory factory) {
+        //setting the root of the tree
+        emailFoldersTreeView.setRoot(root);
+        root.setValue("xxx@yahoo.com");
+        root.setGraphic(factory.resolveIcon(root.getValue()));
+    }
+
+
+
+
     /**
      * handles click event for folders on the email client
      * @param emailFolder
