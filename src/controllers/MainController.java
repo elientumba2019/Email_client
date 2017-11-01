@@ -1,5 +1,6 @@
 package controllers;
 
+import beans.Constants;
 import beans.EmailBean;
 import beans.Singleton;
 import javafx.fxml.FXML;
@@ -119,7 +120,7 @@ public class MainController implements Initializable{
 
         ViewFactory factory = new ViewFactory();
         Stage stage = new Stage();
-        Scene scene = factory.getMainScene("email_detail_view.fxml");
+        Scene scene = factory.getMainScene(Constants.DETAIL_LAYOUT);
         stage.setScene(scene);
         stage.show();
     }
