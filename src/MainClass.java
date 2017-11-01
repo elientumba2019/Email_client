@@ -3,6 +3,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import views.ViewFactory;
 
 public class MainClass extends Application {
 
@@ -16,13 +17,10 @@ public class MainClass extends Application {
     public void start(Stage primaryStage) throws Exception {
 
 
-        //loading the main layout
-        Parent root = FXMLLoader.load(getClass().getResource("views/main.fxml"));
-        Scene scene = new Scene(root);
-
-        //loading the style sheet
-        String style = getClass().getResource("views/style.css").toExternalForm();
-        scene.getStylesheets().add(style);
+        //view factory instance
+        ViewFactory factory = new ViewFactory();
+        Scene scene = factory.getMainScene("main.fxml");
+        
 
         //setting the layout on screen
         primaryStage.setScene(scene);
