@@ -111,27 +111,15 @@ public class MainController implements Initializable{
     }
 
 
+
     /**
      * loads the detail email view on Screen
      */
     private void LoadDetailView() {
-        Parent root = new Pane();
 
-        //getting the layout File
-        try{
-
-            root = FXMLLoader.load(getClass().getResource("/views/email_detail_view.fxml"));
-
-        }
-        catch (IOException e){
-            System.out.println("Couldn't find the file");
-        }
-
-
-        //setting up the scene
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/views/style.css").toExternalForm());
+        ViewFactory factory = new ViewFactory();
         Stage stage = new Stage();
+        Scene scene = factory.getMainScene("email_detail_view.fxml");
         stage.setScene(scene);
         stage.show();
     }
@@ -159,7 +147,7 @@ public class MainController implements Initializable{
 
 
 
-    
+
     /**
      * adds a few element to the tree view
      * @param factory
