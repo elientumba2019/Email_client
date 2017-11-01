@@ -149,21 +149,25 @@ public class MainController implements Initializable{
      * to create a hierarchical structure
      */
     private void initializeTree() {
+
+        //view factory instance
+        ViewFactory factory = new ViewFactory();
+
         //setting the root of the tree
         emailFoldersTreeView.setRoot(root);
         root.setValue("xxx@yahoo.com");
-        root.setGraphic(resolveIcon(root.getValue()));
+        root.setGraphic(factory.resolveIcon(root.getValue()));
 
 
         //setting element po the tree elements
-        TreeItem<String> inbox = new TreeItem<>("Inbox" , resolveIcon("Inbox"));
-        TreeItem<String> sent = new TreeItem<>("Sent" , resolveIcon("Sent1"));
-        TreeItem<String> s1 = new TreeItem<>("Subitem1" , resolveIcon("Subitem"));
-        TreeItem<String> s2 = new TreeItem<>("Subitem2" , resolveIcon("Subitem"));
+        TreeItem<String> inbox = new TreeItem<>("Inbox" , factory.resolveIcon("Inbox"));
+        TreeItem<String> sent = new TreeItem<>("Sent" , factory.resolveIcon("Sent1"));
+        TreeItem<String> s1 = new TreeItem<>("Subitem1" , factory.resolveIcon("Subitem"));
+        TreeItem<String> s2 = new TreeItem<>("Subitem2" , factory.resolveIcon("Subitem"));
         sent.getChildren().addAll(s1 , s2);
 
-        TreeItem<String> spam = new TreeItem<>("Spam" , resolveIcon("Spam"));
-        TreeItem<String> trash = new TreeItem<>("Trash" , resolveIcon("Spam"));
+        TreeItem<String> spam = new TreeItem<>("Spam" , factory.resolveIcon("Spam"));
+        TreeItem<String> trash = new TreeItem<>("Trash" , factory.resolveIcon("Spam"));
 
         //set the root element
         root.getChildren().addAll(inbox , sent , spam , trash);
@@ -177,6 +181,7 @@ public class MainController implements Initializable{
 
 
 
+    
     /**
      * handles click event for folders on the email client
      * @param emailFolder
@@ -223,67 +228,4 @@ public class MainController implements Initializable{
 
     }
 
-
-
-
-
-
-
-    /**
-     * helper method to help in defining which
-     * image needs to be used in the tree for its
-     * elements
-     * @param itemTreeValue
-     * @return
-     */
-    private Node resolveIcon(String itemTreeValue){
-
-        String lower = itemTreeValue.toLowerCase();
-        ImageView returnIcon;
-
-
-        try{
-
-            if(lower.contains("inbox")){
-                returnIcon = getImage("../views/images/inbox.png");
-            }
-            else if(lower.contains("sent")){
-                returnIcon = getImage("../views/images/sent2.png");
-            }
-            else if(lower.contains("spam")){
-                returnIcon = getImage("../views/images/spam.png");
-            }
-            else if(lower.contains("@")){
-                returnIcon = getImage("../views/images/email.png");
-            }
-            else{
-                returnIcon = getImage("../views/images/folder.png");
-            }
-
-
-        }catch (NullPointerException e){
-            System.out.println("Wrong image location");
-            returnIcon = new ImageView();
-        }
-
-        returnIcon.setFitHeight(16);
-        returnIcon.setFitWidth(16);
-
-        return returnIcon;
-    }
-
-
-
-
-
-
-    /**
-     * retrieves the image
-     * @param path
-     * @return
-     */
-    private ImageView getImage(String path){
-        Image image = new Image(getClass().getResourceAsStream(path));
-        return new ImageView(image);
-    }
 }

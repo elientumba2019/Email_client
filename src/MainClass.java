@@ -20,7 +20,7 @@ public class MainClass extends Application {
         //view factory instance
         ViewFactory factory = new ViewFactory();
         Scene scene = factory.getMainScene("main.fxml");
-        
+
 
         //setting the layout on screen
         primaryStage.setScene(scene);
