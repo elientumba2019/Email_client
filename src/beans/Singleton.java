@@ -4,6 +4,7 @@ public class Singleton {
 
 
     private static Singleton instance;
+    private EmailBean message;
 
 
     /**
@@ -28,4 +29,14 @@ public class Singleton {
         return instance;
     }
 
+
+
+
+    public EmailBean getMessage() {
+        return message;
+    }
+
+    public void setMessage(EmailBean message) {
+        this.message = message;
+    }
 }

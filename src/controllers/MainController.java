@@ -92,6 +92,7 @@ public class MainController implements Initializable{
             EmailBean bean = emailTableView.getSelectionModel().getSelectedItem();
             if(bean != null){
                 webView.getEngine().loadContent(bean.getContent());
+                
             }
         });
 
