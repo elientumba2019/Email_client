@@ -10,6 +10,8 @@
 <AnchorPane prefHeight="652.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EmailDetailController">
    <children>
        
-      <WebView layoutX="7.0" layoutY="71.0" prefHeight="573.0" prefWidth="812.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="71.0" />
+      <WebView layoutX="7.0" layoutY="79.0" prefHeight="565.0" prefWidth="812.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="79.0" />
+      <Label fx:id="subjectLable" layoutX="21.0" layoutY="14.0" text="Subject" />
+      <Label fx:id="senderLabel" layoutX="21.0" layoutY="40.0" text="Sender" />
    </children>
 </AnchorPane>

@@ -1,12 +1,19 @@
 package controllers;
 
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class EmailDetailController implements Initializable {
 
+
+    @FXML
+    public Label subjectLable;
+    @FXML
+    public Label senderLabel;
 
     /**
      * takes care of everything that
