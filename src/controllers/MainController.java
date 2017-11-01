@@ -1,18 +1,25 @@
 package controllers;
 
 import beans.EmailBean;
+import com.sun.deploy.util.FXLoader;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import sampleData.SampleData;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Comparator;
 import java.util.ResourceBundle;
@@ -98,8 +105,34 @@ public class MainController implements Initializable{
         //adding the context menu
         emailTableView.setContextMenu(new ContextMenu(showDetails));
         showDetails.setOnAction(L -> {
-            System.out.println("Context menu clicked");
+            LoadDetailView();
         });
+    }
+
+
+    /**
+     * loads the detail email view on Screen
+     */
+    private void LoadDetailView() {
+        Parent root = new Pane();
+
+        //getting the layout File
+        try{
+
+            root = FXMLLoader.load(getClass().getResource("/views/email_detail_view.fxml"));
+
+        }
+        catch (IOException e){
+            System.out.println("Couldn't find the file");
+        }
+
+
+        //setting up the scene
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
 
 
