@@ -1,6 +1,7 @@
 package controllers;
 
 import beans.EmailBean;
+import beans.Singleton;
 import com.sun.deploy.util.FXLoader;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -57,7 +58,8 @@ public class MainController implements Initializable{
     public TableView<EmailBean> emailTableView;
 
 
-
+    //singleton Instance
+    private Singleton singleton;
 
 
 
@@ -73,6 +75,8 @@ public class MainController implements Initializable{
         initializeTree();
         handleTableColumnsClick();
         setContextMenu();
+        //getting singleton instance
+        singleton = Singleton.getInstance();
     }
 
 
