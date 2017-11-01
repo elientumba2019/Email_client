@@ -16,6 +16,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import beans.SampleData;
+import views.ViewFactory;
 
 import java.io.IOException;
 import java.net.URL;
@@ -152,6 +153,7 @@ public class MainController implements Initializable{
         emailFoldersTreeView.setRoot(root);
         root.setValue("xxx@yahoo.com");
         root.setGraphic(resolveIcon(root.getValue()));
+
 
         //setting element po the tree elements
         TreeItem<String> inbox = new TreeItem<>("Inbox" , resolveIcon("Inbox"));
