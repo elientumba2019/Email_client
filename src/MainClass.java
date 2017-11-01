@@ -21,7 +21,7 @@ public class MainClass extends Application {
         Scene scene = new Scene(root);
 
         //loading the style sheet
-        String style = getClass().getResource("styles/style.css").toExternalForm();
+        String style = getClass().getResource("views/style.css").toExternalForm();
         scene.getStylesheets().add(style);
 
         //setting the layout on screen

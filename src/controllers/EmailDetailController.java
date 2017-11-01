@@ -32,5 +32,24 @@ public class EmailDetailController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         singleton = Singleton.getInstance();
+        loadEmailContent();
+    }
+
+
+
+
+    /**
+     * loads the email content
+     * sender info
+     * message subject
+     */
+    private void loadEmailContent() {
+
+        String subject = "Subject : ";
+        String sender = "Sender : ";
+
+        subjectLable.setText(subject + singleton.getMessage().getSubject());
+        senderLabel.setText(sender + singleton.getMessage().getSender());
+        emailRenderedWebView.getEngine().loadContent(singleton.getMessage().getContent());
     }
 }

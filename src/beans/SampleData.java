@@ -1,4 +1,4 @@
-package sampleData;
+package beans;
 
 import beans.EmailBean;
 import javafx.collections.FXCollections;

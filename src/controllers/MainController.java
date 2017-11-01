@@ -2,8 +2,6 @@ package controllers;
 
 import beans.EmailBean;
 import beans.Singleton;
-import com.sun.deploy.util.FXLoader;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,11 +12,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import sampleData.SampleData;
+import beans.SampleData;
 
 import java.io.IOException;
 import java.net.URL;
@@ -92,7 +89,8 @@ public class MainController implements Initializable{
             EmailBean bean = emailTableView.getSelectionModel().getSelectedItem();
             if(bean != null){
                 webView.getEngine().loadContent(bean.getContent());
-                
+                //passing the message to the singleton
+                singleton.setMessage(bean);
             }
         });
 
@@ -134,7 +132,7 @@ public class MainController implements Initializable{
 
         //setting up the scene
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/views/style.css").toExternalForm());
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
@@ -245,19 +243,19 @@ public class MainController implements Initializable{
         try{
 
             if(lower.contains("inbox")){
-                returnIcon = getImage("../images/inbox.png");
+                returnIcon = getImage("../views/images/inbox.png");
             }
             else if(lower.contains("sent")){
-                returnIcon = getImage("../images/sent2.png");
+                returnIcon = getImage("../views/images/sent2.png");
             }
             else if(lower.contains("spam")){
-                returnIcon = getImage("../images/spam.png");
+                returnIcon = getImage("../views/images/spam.png");
             }
             else if(lower.contains("@")){
-                returnIcon = getImage("../images/email.png");
+                returnIcon = getImage("../views/images/email.png");
             }
             else{
-                returnIcon = getImage("../images/folder.png");
+                returnIcon = getImage("../views/images/folder.png");
             }
 
 
