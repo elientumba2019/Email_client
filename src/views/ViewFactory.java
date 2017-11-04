@@ -23,6 +23,9 @@ import java.io.IOException;
 public class ViewFactory {
 
 
+    public static ViewFactory defaultFactory = new ViewFactory();
+
+
     private final String DEFAULT_CSS = "style.css";
 
     private ModelAccess modelAccess = new ModelAccess();

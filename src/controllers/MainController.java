@@ -121,7 +121,7 @@ public class MainController extends AbstractController implements Initializable{
      */
     private void LoadDetailView() {
 
-        ViewFactory factory = new ViewFactory();
+        ViewFactory factory = ViewFactory.defaultFactory;
         Stage stage = new Stage();
         Scene scene = factory.getScene(Constants.DETAIL_LAYOUT);
         stage.setScene(scene);

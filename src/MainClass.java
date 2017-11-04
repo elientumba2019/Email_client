@@ -17,7 +17,7 @@ public class MainClass extends Application {
 
 
         //view factory instance
-        ViewFactory factory = new ViewFactory();
+        ViewFactory factory = ViewFactory.defaultFactory;
         Scene scene = factory.getScene(Constants.MAIN_LAYOUT);
 
 
