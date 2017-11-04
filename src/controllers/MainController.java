@@ -50,8 +50,6 @@ public class MainController implements Initializable{
 
     //singleton Instance
     private Singleton singleton;
-    //model access refernce
-    private ModelAccess modelAccess;
 
 
 

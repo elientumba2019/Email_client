@@ -22,8 +22,6 @@ public class EmailDetailController implements Initializable {
     //singleton
     private Singleton singleton;
 
-    //access model
-    private ModelAccess modelAccess;
 
 
 
