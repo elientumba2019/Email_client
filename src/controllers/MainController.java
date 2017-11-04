@@ -123,7 +123,7 @@ public class MainController extends AbstractController implements Initializable{
 
         ViewFactory factory = new ViewFactory();
         Stage stage = new Stage();
-        Scene scene = factory.getMainScene(Constants.DETAIL_LAYOUT);
+        Scene scene = factory.getScene(Constants.DETAIL_LAYOUT);
         stage.setScene(scene);
         stage.show();
     }

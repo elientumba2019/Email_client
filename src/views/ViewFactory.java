@@ -1,6 +1,7 @@
 package views;
 
 
+import beans.Constants;
 import controllers.AbstractController;
 import controllers.EmailDetailController;
 import controllers.MainController;
@@ -36,25 +37,19 @@ public class ViewFactory {
      * layout element , an empty pane is returned
      * @return
      */
-    public Scene getMainScene(String layoutName){
-        Pane pane = null;
-        try {
+    public Scene getScene(String layoutName){
 
-            pane = FXMLLoader.load(getClass().getResource(layoutName));
-
-        } catch (IOException e) {
-
-            e.printStackTrace();
-            pane = new Pane();
-
+        if(layoutName.equals(Constants.DETAIL_LAYOUT)){
+            emailDetailController = new EmailDetailController(modelAccess);
+            Scene scene = initializeScene(layoutName , emailDetailController);
+            return scene;
         }
 
-        Scene scene = new Scene(pane);
-        //loading the style sheet
-        String style = getClass().getResource("style.css").toExternalForm();
-        scene.getStylesheets().add(style);
-
-        return scene;
+        else{
+            mainController = new MainController(modelAccess);
+            Scene scene = initializeScene(layoutName  , mainController);
+            return scene;
+        }
     }
 
 

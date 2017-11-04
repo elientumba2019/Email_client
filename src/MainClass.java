@@ -1,7 +1,5 @@
 import beans.Constants;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import views.ViewFactory;
@@ -20,7 +18,7 @@ public class MainClass extends Application {
 
         //view factory instance
         ViewFactory factory = new ViewFactory();
-        Scene scene = factory.getMainScene(Constants.MAIN_LAYOUT);
+        Scene scene = factory.getScene(Constants.MAIN_LAYOUT);
 
 
         //setting the layout on screen
