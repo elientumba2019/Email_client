@@ -1,6 +1,9 @@
 package views;
 
 
+import controllers.EmailDetailController;
+import controllers.MainController;
+import controllers.ModelAccess;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -17,6 +20,10 @@ import java.io.IOException;
 public class ViewFactory {
 
 
+
+    private ModelAccess modelAccess = new ModelAccess();
+    private MainController mainController;
+    private EmailDetailController emailDetailController;
 
 
 

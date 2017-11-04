@@ -34,7 +34,7 @@ public class EmailDetailController extends AbstractController implements Initial
     }
 
 
-    
+
     /**
      * takes care of everything that
      * must be done before having the scene
