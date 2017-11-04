@@ -14,7 +14,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
-import javax.naming.OperationNotSupportedException;
 import java.io.IOException;
 
 /**
@@ -36,34 +35,34 @@ public class ViewFactory {
 
 
 
-
-    
     /**
      * returns the main scene to some client
      * in case the pane is not present with its
      * layout element , an empty pane is returned
      * @return
      */
-    public Scene getScene(String layoutName) throws OperationNotSupportedException {
+    public Scene getScene(String layoutName){
 
 
 
         if(layoutName.equals(Constants.DETAIL_LAYOUT)){
-            if(!mainViewInitialized){
-                mainController = new MainController(modelAccess);
-                mainViewInitialized = true;
-                return initializeScene(layoutName , mainController);
-            }
-            else{
-                throw new OperationNotSupportedException("Main scene already initialized");
-            }
+            emailDetailController = new EmailDetailController(modelAccess);
+            Scene scene = initializeScene(layoutName , emailDetailController);
+            return scene;
         }
 
         else{
-            mainController = new MainController(modelAccess);
-            Scene scene = initializeScene(layoutName  , mainController);
-            return scene;
-        }
+            if(!mainViewInitialized) {
+                mainController = new MainController(modelAccess);
+                mainViewInitialized = true;
+                Scene scene = initializeScene(layoutName, mainController);
+                return scene;
+            }
+            else{
+                return null;
+            }
+
+         }
     }
 
 
