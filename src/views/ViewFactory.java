@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
+import javax.naming.OperationNotSupportedException;
 import java.io.IOException;
 
 /**
@@ -24,6 +25,7 @@ public class ViewFactory {
 
 
     public static ViewFactory defaultFactory = new ViewFactory();
+    private static boolean mainViewInitialized = false;
 
 
     private final String DEFAULT_CSS = "style.css";
@@ -34,18 +36,27 @@ public class ViewFactory {
 
 
 
+
+    
     /**
      * returns the main scene to some client
      * in case the pane is not present with its
      * layout element , an empty pane is returned
      * @return
      */
-    public Scene getScene(String layoutName){
+    public Scene getScene(String layoutName) throws OperationNotSupportedException {
+
+
 
         if(layoutName.equals(Constants.DETAIL_LAYOUT)){
-            emailDetailController = new EmailDetailController(modelAccess);
-            Scene scene = initializeScene(layoutName , emailDetailController);
-            return scene;
+            if(!mainViewInitialized){
+                mainController = new MainController(modelAccess);
+                mainViewInitialized = true;
+                return initializeScene(layoutName , mainController);
+            }
+            else{
+                throw new OperationNotSupportedException("Main scene already initialized");
+            }
         }
 
         else{
