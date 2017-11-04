@@ -1,5 +1,6 @@
 package controllers;
 
+import beans.EmailBean;
 import beans.Singleton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -44,8 +45,8 @@ public class EmailDetailController extends AbstractController implements Initial
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        singleton = Singleton.getInstance();
-        loadEmailContent();
+        EmailBean bean = super.getModelAccess().getSelectedMessage();
+        loadEmailContent(bean);
     }
 
 
@@ -56,13 +57,13 @@ public class EmailDetailController extends AbstractController implements Initial
      * sender info
      * message subject
      */
-    private void loadEmailContent() {
+    private void loadEmailContent(EmailBean message) {
 
         String subject = "Subject : ";
         String sender = "Sender : ";
 
-        subjectLable.setText(subject + singleton.getMessage().getSubject());
-        senderLabel.setText(sender + singleton.getMessage().getSender());
-        emailRenderedWebView.getEngine().loadContent(singleton.getMessage().getContent());
+        subjectLable.setText(subject + message.getSubject());
+        senderLabel.setText(sender + message.getSender());
+        emailRenderedWebView.getEngine().loadContent(message.getContent());
     }
 }

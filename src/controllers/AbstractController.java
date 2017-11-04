@@ -11,8 +11,6 @@ public abstract class AbstractController {
     }
 
 
-
-
     public ModelAccess getModelAccess() {
         return modelAccess;
     }

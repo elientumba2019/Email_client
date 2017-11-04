@@ -91,8 +91,8 @@ public class MainController extends AbstractController implements Initializable{
             EmailBean bean = emailTableView.getSelectionModel().getSelectedItem();
             if(bean != null){
                 webView.getEngine().loadContent(bean.getContent());
-                //passing the message to the singleton
-                singleton.setMessage(bean);
+                //passing the message to the model accesss
+                super.getModelAccess().setSelectedMessage(bean);
             }
         });
 
