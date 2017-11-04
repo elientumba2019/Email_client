@@ -8,9 +8,6 @@ public class ModelAccess {
 
 
 
-
-
-
     public EmailBean getSelectedMessage() {
         return selectedMessage;
     }

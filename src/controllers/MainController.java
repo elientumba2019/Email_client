@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.Comparator;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable{
+public class MainController extends AbstractController implements Initializable{
 
 
 
@@ -52,6 +52,13 @@ public class MainController implements Initializable{
     private Singleton singleton;
 
 
+    /**
+     * constructor inherited from superclass
+     * @param modelAccess
+     */
+    public MainController(ModelAccess modelAccess) {
+        super(modelAccess);
+    }
 
 
 

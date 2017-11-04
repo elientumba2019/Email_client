@@ -9,7 +9,7 @@ import javafx.scene.web.WebView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EmailDetailController implements Initializable {
+public class EmailDetailController extends AbstractController implements Initializable {
 
 
     @FXML
@@ -25,8 +25,16 @@ public class EmailDetailController implements Initializable {
 
 
 
+    /**
+     * inherited constructor from superclass
+     * @param modelAccess
+     */
+    public EmailDetailController(ModelAccess modelAccess) {
+        super(modelAccess);
+    }
 
 
+    
     /**
      * takes care of everything that
      * must be done before having the scene
