@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/email_detail_view.fxml" afterPath="$PROJECT_DIR$/src/views/email_detail_view.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/main.fxml" afterPath="$PROJECT_DIR$/src/views/main.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/ViewFactory.java" afterPath="$PROJECT_DIR$/src/views/ViewFactory.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewFactory.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ViewFactory.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/ViewFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+            <state relative-caret-position="506">
+              <caret line="157" column="21" lean-forward="false" selection-start-line="157" selection-start-column="21" selection-end-line="157" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,7 +121,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/main.fxml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="81">
@@ -254,9 +253,9 @@
         <option value="$PROJECT_DIR$/src/controllers/ModelAccess.java" />
         <option value="$PROJECT_DIR$/src/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/controllers/EmailDetailController.java" />
-        <option value="$PROJECT_DIR$/src/views/ViewFactory.java" />
         <option value="$PROJECT_DIR$/src/views/email_detail_view.fxml" />
         <option value="$PROJECT_DIR$/src/views/main.fxml" />
+        <option value="$PROJECT_DIR$/src/views/ViewFactory.java" />
       </list>
     </option>
   </component>
@@ -528,12 +527,12 @@
       <workItem from="1509028602810" duration="89000" />
       <workItem from="1509184669395" duration="8964000" />
       <workItem from="1509499347898" duration="7575000" />
-      <workItem from="1509804083988" duration="1445000" />
+      <workItem from="1509804083988" duration="1926000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29714000" />
+    <option name="totallyTimeSpent" value="30195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="825" y="71" width="770" height="794" extended-state="0" />
@@ -1047,16 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/ViewFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/email_detail_view.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1077,6 +1066,16 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/ViewFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="157" column="21" lean-forward="false" selection-start-line="157" selection-start-column="21" selection-end-line="157" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

@@ -1,11 +1,13 @@
 package views;
 
 
+import controllers.AbstractController;
 import controllers.EmailDetailController;
 import controllers.MainController;
 import controllers.ModelAccess;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,6 +22,7 @@ import java.io.IOException;
 public class ViewFactory {
 
 
+    private final String DEFAULT_CSS = "style.css";
 
     private ModelAccess modelAccess = new ModelAccess();
     private MainController mainController;
@@ -118,5 +121,40 @@ public class ViewFactory {
     private ImageView getImage(String path){
         Image image = new Image(getClass().getResourceAsStream(path));
         return new ImageView(image);
+    }
+
+
+
+    /**
+     * method to initialize a view
+     * @param fxmlPath
+     * @param controller
+     * @return
+     */
+    private Scene initializeScene(String fxmlPath ,
+                                  AbstractController controller){
+
+
+        FXMLLoader loader;
+        Parent parent;
+        Scene scene;
+
+        try {
+
+            loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            loader.setController(controller);
+            parent = loader.load();
+
+        } catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+;
+
+        scene = new Scene(parent);
+        String style = getClass().getResource(DEFAULT_CSS).toExternalForm();
+        scene.getStylesheets().add(style);
+
+        return scene;
     }
 }
