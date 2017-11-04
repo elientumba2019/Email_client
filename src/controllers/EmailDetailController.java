@@ -22,6 +22,13 @@ public class EmailDetailController implements Initializable {
     //singleton
     private Singleton singleton;
 
+    //access model
+    private ModelAccess modelAccess;
+
+
+
+
+
     /**
      * takes care of everything that
      * must be done before having the scene

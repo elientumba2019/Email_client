@@ -48,9 +48,12 @@ public class MainController implements Initializable{
     @FXML
     public TableView<EmailBean> emailTableView;
 
-
     //singleton Instance
     private Singleton singleton;
+    //model access refernce
+    private ModelAccess modelAccess;
+
+
 
 
 
