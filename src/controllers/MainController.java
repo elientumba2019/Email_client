@@ -53,6 +53,8 @@ public class MainController extends AbstractController implements Initializable{
     private Singleton singleton;
 
 
+
+
     /**
      * constructor inherited from superclass
      * @param modelAccess
@@ -222,7 +224,7 @@ public class MainController extends AbstractController implements Initializable{
     private void setCellValues() {
         //setting the row factory
         emailTableView.setRowFactory(a -> new BoldableRowFactory<>());
-        
+
         subjectColumn.setCellValueFactory(new PropertyValueFactory<EmailBean , String>("subject"));
         sendColumn.setCellValueFactory(new PropertyValueFactory<EmailBean , String>("sender"));
         sizeColumn.setCellValueFactory(new PropertyValueFactory<EmailBean , String>("size"));
@@ -242,6 +244,17 @@ public class MainController extends AbstractController implements Initializable{
         });
 
 
+    }
+
+
+
+    @FXML
+    public void changeReadAction(){
+       EmailBean message = getModelAccess().getSelectedMessage();
+       if(message != null){
+           boolean isRead = message.isRead();
+           message.setRead(!isRead);
+       }
     }
 
 }

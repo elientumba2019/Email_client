@@ -29,10 +29,10 @@ public class SampleData {
             new EmailBean("You just won 2 cents! Click to claim!","ss@bail.com", 10, "<html>Give us first 3 cents!<h3>lorem ipsum + <br> </h3></html>", true),
             new EmailBean("You got a virus!","safe@brousing.com",6300, "<html>Formatting computer.....<h3>lorem ipsum + <br> </h3></html>", true),
             new EmailBean("You won't belive this: click and see!!!","serious@company.com", 22000000, "<html>You are smart<h3>lorem ipsum + <br> </h3></html>", true),
-            new EmailBean("Like and share if you care!!","book@face.com", 200, "<html>Your likes make a huge difference!!!<h3>lorem ipsum + <br> </h3></html>", true),
+            new EmailBean("Like and share if you care!!","book@face.com", 200, "<html>Your likes make a huge difference!!!<h3>lorem ipsum + <br> </h3></html>", false),
             new EmailBean("You just won 2 cents! Click to claim!","ss@bail.com", 10, "<html>Give us first 3 cents!<h3>lorem ipsum + <br> </h3></html>", true),
             new EmailBean("You got a virus!","safe@brousing.com",6300, "<html>Formatting computer.....<h3>lorem ipsum + <br> </h3></html>", true),
-            new EmailBean("You won't belive this: click and see!!!","serious@company.com", 22000000, "<html>You are smart<h3>lorem ipsum + <br> </h3></html>", true),
+            new EmailBean("You won't belive this: click and see!!!","serious@company.com", 22000000, "<html>You are smart<h3>lorem ipsum + <br> </h3></html>", false),
             new EmailBean("Like and share if you care!!","book@face.com", 200, "<html>Your likes make a huge difference!!!<h3>lorem ipsum + <br> </h3></html>", true),
             new EmailBean("You just won 2 cents! Click to claim!","ss@bail.com", 10, "<html>Give us first 3 cents!<h3>lorem ipsum + <br> </h3></html>", true),
             new EmailBean("You got a virus!","safe@brousing.com",6300, "<html>Formatting computer.....<h3>lorem ipsum + <br> </h3></html>", true)
