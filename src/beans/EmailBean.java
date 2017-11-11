@@ -1,11 +1,12 @@
 package beans;
 
+import beans.table.AbstractTableItem;
 import javafx.beans.property.SimpleStringProperty;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class EmailBean {
+public class EmailBean extends AbstractTableItem{
 
 
     public static Map<String , Integer> formattedValues = new HashMap<>();
@@ -23,7 +24,8 @@ public class EmailBean {
      * @param sender
      * @param size
      */
-    public EmailBean(String subject , String sender , int size , String content){
+    public EmailBean(String subject , String sender , int size , String content , boolean isRead){
+        super(isRead);
         this.subject = new SimpleStringProperty(subject);
         this.sender = new SimpleStringProperty(sender);
         this.size = new SimpleStringProperty(formatSize(size));
