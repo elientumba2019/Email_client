@@ -3,6 +3,7 @@ package controllers;
 import beans.Constants;
 import beans.EmailBean;
 import beans.Singleton;
+import beans.table.BoldableRowFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -219,6 +220,9 @@ public class MainController extends AbstractController implements Initializable{
      * sets cell values properties for the table
      */
     private void setCellValues() {
+        //setting the row factory
+        emailTableView.setRowFactory(a -> new BoldableRowFactory<>());
+        
         subjectColumn.setCellValueFactory(new PropertyValueFactory<EmailBean , String>("subject"));
         sendColumn.setCellValueFactory(new PropertyValueFactory<EmailBean , String>("sender"));
         sizeColumn.setCellValueFactory(new PropertyValueFactory<EmailBean , String>("size"));
