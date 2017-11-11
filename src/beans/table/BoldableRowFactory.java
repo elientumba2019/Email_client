@@ -1,8 +1,39 @@
 package beans.table;
 
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.control.TableRow;
 
 public class BoldableRowFactory<T extends AbstractTableItem> extends TableRow {
+
+
+    private final SimpleBooleanProperty bold = new SimpleBooleanProperty();
+    private T currentItem = null;
+
+
+    public BoldableRowFactory(){
+        super();
+
+        bold.addListener((ObservableValue<? extends Boolean> observable, Boolean olValue, Boolean NewValue) ->{
+            if(currentItem != null && currentItem==getItem()){
+                updateItem(getItem(), isEmpty());
+            }
+        });
+
+
+        
+        itemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object olValue, Object NewValue) {
+                bold.unbind();
+                if (NewValue != null) {
+                    bold.bind(((T)NewValue).getReadProperty());
+                    currentItem = (T)NewValue;
+                }
+            }
+        });
+    }
 
 
     /**
