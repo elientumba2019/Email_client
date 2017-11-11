@@ -157,7 +157,6 @@ public class ViewFactory {
             e.printStackTrace();
             return null;
         }
-;
 
         scene = new Scene(parent);
         String style = getClass().getResource(DEFAULT_CSS).toExternalForm();
