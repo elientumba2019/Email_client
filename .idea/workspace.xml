@@ -146,8 +146,8 @@
       <file leaf-file-name="BoldableRowFactory.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/beans/table/BoldableRowFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+            <state relative-caret-position="126">
+              <caret line="37" column="11" lean-forward="true" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -488,12 +488,12 @@
       <workItem from="1509499347898" duration="7575000" />
       <workItem from="1509804083988" duration="4475000" />
       <workItem from="1509955376164" duration="601000" />
-      <workItem from="1510399368784" duration="3647000" />
+      <workItem from="1510399368784" duration="4322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37336000" />
+    <option name="totallyTimeSpent" value="38011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
@@ -989,8 +989,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/beans/table/BoldableRowFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        <state relative-caret-position="126">
+          <caret line="37" column="11" lean-forward="true" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -15,6 +15,9 @@ public class BoldableRowFactory<T extends AbstractTableItem> extends TableRow {
     public BoldableRowFactory(){
         super();
 
+        /**
+         * adding a listener to the bold property
+         */
         bold.addListener((ObservableValue<? extends Boolean> observable, Boolean olValue, Boolean NewValue) ->{
             if(currentItem != null && currentItem==getItem()){
                 updateItem(getItem(), isEmpty());
@@ -22,7 +25,7 @@ public class BoldableRowFactory<T extends AbstractTableItem> extends TableRow {
         });
 
 
-        
+
         itemProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observable, Object olValue, Object NewValue) {
